@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import ParticlesBackground from './ParticlesBackground';
 
 function Result() {
   const [imageUrl, setImageUrl] = useState(null);
@@ -30,8 +31,10 @@ function Result() {
   }, []);
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '100px' }}>
-      <h2>Detection Result</h2>
+    <>
+    <ParticlesBackground />
+    <div style={{ textAlign: 'center'}}>
+      <h1>Detection Result</h1>
       {isLoading ? (
         <p>Loading detection result...</p>
       ) : (
@@ -43,7 +46,17 @@ function Result() {
           )}
         </div>
       )}
+      <div style={{ marginTop: '20px' }}>
+      <button 
+        onClick={() => window.location.href = '/'} 
+        style={{ padding: '10px 20px', fontSize: '16px', borderRadius: '5px', cursor: 'pointer' }}
+      >
+        Go back
+      </button>
     </div>
+    </div>
+    
+    </>
   );
 }
 

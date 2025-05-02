@@ -11,7 +11,7 @@ function Loading() {
       const res = await fetch('/api/status');
       const data = await res.json();
 
-      if (data.status === 'done') {
+      if (data.status == 'done') {
         clearInterval(interval);
         navigate('/result');  // Redirect to result page after detection
       }
